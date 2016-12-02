@@ -18,12 +18,6 @@ describe 'Definition' do
       expect(new_def.def).to eq('someone who does computer sorcery')
     end
   end
-  describe '#type' do
-    it 'will read the type' do
-      new_def = Def.new({type: 'noun', def: 'someone who does computer sorcery'})
-      expect(new_def.type).to eq('noun')
-    end
-  end
   describe '#id' do
     it 'will read the id of the def' do
       new_def = Def.new({def: 'coder'})
