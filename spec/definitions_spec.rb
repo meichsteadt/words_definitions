@@ -6,7 +6,7 @@ describe 'Definition' do
   before :each do
     Def.clear
   end
-  describe '.add' do
+  describe '#add' do
     it 'will create a Definition object' do
       new_def = Def.new({type: 'noun', def: 'someone who does computer sorcery'})
       expect(new_def.add).to eq([new_def])
@@ -16,6 +16,12 @@ describe 'Definition' do
     it 'will read the def' do
       new_def = Def.new({def: 'someone who does computer sorcery'})
       expect(new_def.def).to eq('someone who does computer sorcery')
+    end
+  end
+  describe '#type' do
+    it 'will read the type' do
+      new_def = Def.new({type: 'noun', def: 'someone who does computer sorcery'})
+      expect(new_def.type).to eq('noun')
     end
   end
   describe '.clear' do
