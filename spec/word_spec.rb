@@ -1,6 +1,7 @@
 require 'rspec'
 require 'pry'
 require 'word'
+require 'def'
 
 describe 'Word' do
   describe '.add' do
