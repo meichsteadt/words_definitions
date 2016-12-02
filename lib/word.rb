@@ -4,6 +4,7 @@ class Word
   def initialize(attributes)
     @word = attributes[:word]
     @definitions = []
+    @id = @@words.length + 1
   end
   def add
     @@words.push(self)
@@ -13,6 +14,9 @@ class Word
   end
   def definitions
     @definitions
+  end
+  def id
+    @id
   end
   def self.all
     @@words

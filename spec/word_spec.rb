@@ -42,8 +42,15 @@ describe 'Word' do
   describe '#definitions' do
     it 'will read the definitions of the word' do
       new_word = Word.new({word: 'coder'})
-      new_word.add_definition('someone who does computer sorcery')
-      expect(new_word.definitions).to eq(['someone who does computer sorcery'])
+      new_def = Def.new({def: 'someone who does computer sorcery'})
+      new_word.add_definition(new_def)
+      expect(new_word.definitions).to eq([new_def])
+    end
+  end
+  describe '#id' do
+    it 'will read the id of the word' do
+      new_word = Word.new({word: 'coder'})
+      expect(new_word.id).to eq(1)
     end
   end
 end
