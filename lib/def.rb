@@ -10,4 +10,10 @@ class Def
   def def
     @def
   end
+  def self.all
+    @@defs
+  end
+  def self.clear
+    @@defs = []
+  end
 end

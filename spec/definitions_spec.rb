@@ -3,6 +3,9 @@ require 'pry'
 require 'def'
 
 describe 'Definition' do
+  before :each do
+    Def.clear
+  end
   describe '.add' do
     it 'will create a Definition object' do
       new_def = Def.new({type: 'noun', def: 'someone who does computer sorcery'})
@@ -15,11 +18,18 @@ describe 'Definition' do
       expect(new_def.def).to eq('someone who does computer sorcery')
     end
   end
+  describe '.clear' do
+    it 'will clear the definitions in Def' do
+      new_def = Def.new({type: 'noun', def: 'someone who does computer sorcery'})
+      new_def.add
+      expect(Def.clear).to eq([])
+    end
+  end
   describe '.all' do
     it 'will read the definitions in Def' do
       new_def = Def.new({type: 'noun', def: 'someone who does computer sorcery'})
       new_def.add
-      expect(new_def.all).to eq([new_def])
+      expect(Def.all).to eq([new_def])
     end
   end
 end
