@@ -19,6 +19,12 @@ describe 'Word' do
       expect(new_word.word).to eq('coder')
     end
   end
+  describe '#type' do
+    it 'will read the type of the word' do
+      new_word = Word.new({word: 'coder'})
+      expect(new_word.word).to eq('coder')
+    end
+  end
   describe '.all' do
     it 'will read the words in Word' do
       new_word = Word.new({word: 'coder'})

@@ -1,0 +1,7 @@
+<h1><i class="fa fa-book"></i> Words</h1>
+<ul>
+  <% @words.each() do |word| %>
+    <li style="list-style:none; font-size:20px;"><i class="fa fa-user"></i> <a href="/words/<%= word.id %>"><%= word.word %></a></li>
+  <% end %>
+</ul>
+<a href="/words/new"><i class="fa fa-plus"></i> Add new word</a>

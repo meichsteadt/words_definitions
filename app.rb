@@ -2,6 +2,7 @@ require 'sinatra'
 require 'sinatra/reloader'
 require './lib/word'
 require './lib/def'
+require 'pry'
 also_reload 'lib/**/*.rb'
 
 get '/' do
@@ -13,8 +14,13 @@ get '/words/new' do
 end
 
 post '/word' do
-  new_word = Word.new(type: params[:type], word: params[:word])
+  new_word = Word.new(word: params[:word])
   new_word.add
   @word = new_word
   erb :word_success
+end
+
+get '/words' do
+  @words = Word.all
+  erb :words
 end
