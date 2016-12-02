@@ -7,4 +7,7 @@ class Def
   def add
     @@defs.push(self)
   end
+  def def
+    @def
+  end
 end
