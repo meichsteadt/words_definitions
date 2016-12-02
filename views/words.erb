@@ -1,8 +1,9 @@
-<h1><i class="fa fa-book"></i> Words</h1>
+<h1>Words</h1>
 <ul>
   <% @words.each() do |word| %>
     <li style="font-size:20px;"><a href="/words/<%= word.id %>"><%= word.word %></a></li>
   <% end %>
 </ul>
 <a href="/words/new"><i class="fa fa-plus"></i> Add word</a>
+<br>
 <a href="/clear"><i class="fa fa-minus"></i> Delete all words</a>

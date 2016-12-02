@@ -1,8 +1,9 @@
-<h1><%= @word.word %></h1>
+<h1 style="margin-bottom:0;"><%= @word.word %></h1>
 <% if @word.definitions.length > 0 %>
+<p><em><%= @word.type %></em></p>
+<ol class="defs">
   <% @word.definitions.each do |definition| %>
-  <ol>
-    <li><em><%= definition.type %></em>: <%= definition.def %></li>
+    <li><%= definition.def %></li>
     <% end %>
   </ol>
   <br>
