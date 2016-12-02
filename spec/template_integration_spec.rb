@@ -42,7 +42,6 @@ end
 
 describe('/words', {:type => :feature}) do
   it('displays add word form on link click') do
-    Word.clear
     visit('/words/new')
     fill_in('word', :with => 'coder')
     select('noun', :from => 'type')
@@ -82,5 +81,37 @@ describe('post /def', {:type => :feature}) do
     fill_in('definition', :with => 'magical computer sorcerer')
     click_button('Submit')
     expect(page).to have_content('You have successfully added a definition')
+  end
+end
+
+describe('/a_z', {:type => :feature}) do
+  it('alphabetizes the words a to z') do
+    visit('/words/new')
+    fill_in('word', :with => 'bro')
+    select('noun', :from => 'type')
+    click_button('Submit')
+    click_link('View words')
+    click_link('Sort a-z')
+    expect(page).to have_content('bro coder')
+  end
+end
+
+describe('/a_z', {:type => :feature}) do
+  it('alphabetizes the words a to z') do
+    visit('/words/new')
+    fill_in('word', :with => 'dro')
+    select('noun', :from => 'type')
+    click_button('Submit')
+    click_link('View words')
+    click_link('Sort z-a')
+    expect(page).to have_content('dro coder')
+  end
+end
+
+describe('/a_z', {:type => :feature}) do
+  it('alphabetizes the words a to z') do
+    visit('/words')
+    click_link('View all definitions')
+    expect(page).to have_content('magical computer sorcerer')
   end
 end

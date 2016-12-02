@@ -48,3 +48,34 @@ post '/def' do
   @word.add_definition(new_def)
   erb :def_success
 end
+
+get '/a_z' do
+  @words = Word.all
+  @words.sort_by! { |word| word.word }
+  erb :words
+end
+
+get '/z_a' do
+  @words = Word.all
+  @words.sort_by! { |word| word.word }
+  @words.reverse!
+  erb :words
+end
+
+get '/all' do
+  @words = Word.all
+  erb :all
+end
+
+get '/all/a_z' do
+  @words = Word.all
+  @words.sort_by! { |word| word.word }
+  erb :words
+end
+
+get '/z_a' do
+  @words = Word.all
+  @words.sort_by! { |word| word.word }
+  @words.reverse!
+  erb :words
+end

@@ -2,6 +2,12 @@
 <ul>
   <% @words.each() do |word| %>
     <li style="font-size:20px;"><a href="/words/<%= word.id %>"><%= word.word %></a></li>
+    <p><em><%= word.type %></em></p>
+    <ol class="defs">
+      <% word.definitions.each do |definition| %>
+        <li><%= definition.def %></li>
+        <% end %>
+      </ol>
   <% end %>
 </ul>
 <div class="buttons">
