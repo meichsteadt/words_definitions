@@ -9,3 +9,11 @@ describe('root path', {:type => :feature}) do
     expect(page).to have_content('Add word')
   end
 end
+
+describe('root to add word path', {:type => :feature}) do
+  it('displays add word form on link click') do
+    visit('/')
+    click_link('Add word')
+    expect(page).to have_content('New word')
+  end
+end
