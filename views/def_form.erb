@@ -1,16 +1,17 @@
-<form class="form-inline" action="/word" method="post">
+<form class="form-inline" action="/def" method="post">
   <!-- Forms -->
-  <div class="form-group">
-    <label for="def">New definition</label>
-    <input id="def" name="def" class="form-control" type="text">
-  </div>
-  <!-- Select boxes -->
-  <select class="form-control" name="type">
-    <option>noun</option>
-    <option>verb</option>
-    <option>adjective</option>
-    <option>adverb</option>
-    <option>article</option>
-  </select>
+    <div class="form-group">
+      <label for="def">New definition</label>
+      <input id="def" name="def" class="form-control" type="text">
+    </div>
+    <!-- Select boxes -->
+    <select class="form-control" name="type">
+      <option>noun</option>
+      <option>verb</option>
+      <option>adjective</option>
+      <option>adverb</option>
+      <option>article</option>
+    </select>
+  <a href="/words/<%= @word.id %>/mult"><i class="fa fa-plus"></i> Add definition</a>
   <button type="submit" class="btn-default btn">Submit</button>
 </form>
