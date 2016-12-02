@@ -9,4 +9,10 @@ describe 'Word' do
       expect(new_word.add).to eq([new_word])
     end
   end
+  describe '#word' do
+    it 'will read the word' do
+      new_word = Word.new({word: 'coder'})
+      expect(new_word.word).to eq('coder')
+    end
+  end
 end
