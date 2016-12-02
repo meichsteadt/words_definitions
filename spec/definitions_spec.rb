@@ -30,6 +30,12 @@ describe 'Definition' do
       expect(new_def.id).to eq(1)
     end
   end
+  describe '#word_id' do
+    it 'will read the id of the word' do
+      new_def = Def.new({def: 'someone who does computer sorcery', word_id: 1})
+      expect(new_def.word_id).to eq(1)
+    end
+  end
   describe '.clear' do
     it 'will clear the definitions in Def' do
       new_def = Def.new({type: 'noun', def: 'someone who does computer sorcery'})

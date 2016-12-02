@@ -1,11 +1,11 @@
 class Def
   @@defs = []
-  attr_reader(:type, :def)
+  attr_reader(:type, :def, :word_id)
   def initialize(attributes)
     @type = attributes[:type]
     @def = attributes[:def]
+    @word_id = attributes[:word_id]
     @id = @@defs.length + 1
-    @word_id = ""
   end
   def add
     @@defs.push(self)
@@ -18,8 +18,5 @@ class Def
   end
   def id
     @id
-  end
-  def word_id
-    @word_id
   end
 end
