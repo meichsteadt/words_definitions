@@ -70,12 +70,12 @@ end
 get '/all/a_z' do
   @words = Word.all
   @words.sort_by! { |word| word.word }
-  erb :words
+  erb :all
 end
 
-get '/z_a' do
+get '/all/z_a' do
   @words = Word.all
   @words.sort_by! { |word| word.word }
   @words.reverse!
-  erb :words
+  erb :all
 end

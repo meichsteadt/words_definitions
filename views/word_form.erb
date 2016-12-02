@@ -1,16 +1,20 @@
 <form class="form-inline" action="/word" method="post">
   <!-- Forms -->
-  <div class="form-group">
-    <label for="word">New word</label>
-    <input id="word" name="word" class="form-control" type="text">
+  <div class="row">
+    <div class="col-md-11 col-md-offset-1">
+      <div class="form-group">
+        <label for="word">New word</label>
+        <input id="word" name="word" class="form-control" type="text">
+      </div>
+    <!-- Select boxes -->
+    <select class="form-control" name="type">
+      <option>noun</option>
+      <option>verb</option>
+      <option>adjective</option>
+      <option>adverb</option>
+      <option>article</option>
+    </select>
+    <button type="submit" class="btn-default btn">Submit</button>
+    </div>
   </div>
-  <!-- Select boxes -->
-  <select class="form-control" name="type">
-    <option>noun</option>
-    <option>verb</option>
-    <option>adjective</option>
-    <option>adverb</option>
-    <option>article</option>
-  </select>
-  <button type="submit" class="btn-default btn">Submit</button>
 </form>

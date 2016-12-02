@@ -108,7 +108,7 @@ describe('/a_z', {:type => :feature}) do
   end
 end
 
-describe('/a_z', {:type => :feature}) do
+describe('/all', {:type => :feature}) do
   it('alphabetizes the words a to z') do
     visit('/words')
     click_link('View all definitions')

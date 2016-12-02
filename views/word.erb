@@ -1,15 +1,22 @@
-<h1 style="margin-bottom:0;"><%= @word.word %></h1>
 <% if @word.definitions.length > 0 %>
-<p><em><%= @word.type %></em></p>
-<ol class="defs">
-  <% @word.definitions.each do |definition| %>
-    <li><%= definition.def %></li>
-    <% end %>
-  </ol>
-  <br>
+<div class="row">
+  <div class="col-md-11 col-md-offset-1">
+    <h1 style="margin-bottom:0;"><%= @word.word %></h1>
+    <p><em><%= @word.type %></em></p>
+    <ol class="defs">
+      <% @word.definitions.each do |definition| %>
+        <li style="list-style-position:inside;"><%= definition.def %></li>
+      <% end %>
+    </ol>
+  </div>
+</div>
 <% else %>
+<div class="text-center">
+  <h1><%= @word.word %></h1>
   <h4>Looks like you have no definitions</h4>
+</div>
 <% end %>
-<a href="/words/<%= @word.id %>/new"><i class="fa fa-plus"></i> Add definition</a>
-<br>
-<a href="/words"><button class="btn btn-default">View words</button></a>
+<div class="buttons">
+  <a href="/words/<%= @word.id %>/new" class="btn btn-default"><i class="fa fa-plus"></i> Add definition</a>
+  <a href="/words" class="btn btn-default"><i class="fa fa-bold"></i> View words</button></a>
+</div>

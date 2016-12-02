@@ -1,9 +1,13 @@
 <form class="form-inline" action="/def" method="post">
   <input type="hidden" id="id" name="id" value="<%= @word.id %>">
   <!-- Forms -->
-    <div class="form-group">
-      <label for="def">New definition</label>
-      <input id="def" name="def" class="form-control" type="text">
+  <div class="row">
+    <div class="col-md-11 col-md-offset-1">
+      <div class="form-group">
+        <label for="def">New definition</label>
+        <input id="def" name="def" class="form-control" type="text">
+      </div>
+      <button type="submit" class="btn-default btn">Submit</button>
     </div>
-  <button type="submit" class="btn-default btn">Submit</button>
+  </div>
 </form>
