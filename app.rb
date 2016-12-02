@@ -20,6 +20,12 @@ post '/word' do
   erb :word_success
 end
 
+get '/clear' do
+  Word.clear
+  @words = Word.all
+  erb :words
+end
+
 get '/words' do
   @words = Word.all
   erb :words
@@ -41,10 +47,4 @@ post '/def' do
   new_def.add
   @word.add_definition(new_def)
   erb :def_success
-end
-
-get '/clear' do
-  Word.clear
-  @words = Word.all
-  erb :words
 end
