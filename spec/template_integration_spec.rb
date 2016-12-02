@@ -36,3 +36,11 @@ describe('submit word path', {:type => :feature}) do
     expect(page).to have_content('coder')
   end
 end
+
+describe('root to add word path', {:type => :feature}) do
+  it('displays add word form on link click') do
+    visit('/words')
+    click_link('Add word')
+    expect(page).to have_content('New word')
+  end
+end
