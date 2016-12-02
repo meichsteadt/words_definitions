@@ -21,8 +21,8 @@ describe 'Word' do
   end
   describe '#type' do
     it 'will read the type of the word' do
-      new_word = Word.new({word: 'coder'})
-      expect(new_word.word).to eq('coder')
+      new_word = Word.new({word: 'coder', type: 'noun'})
+      expect(new_word.type).to eq('noun')
     end
   end
   describe '#add_definition' do

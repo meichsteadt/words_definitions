@@ -4,7 +4,7 @@ require './lib/word'
 require './lib/def'
 require 'pry'
 also_reload 'lib/**/*.rb'
-@@times = 0
+
 get '/' do
   erb :index
 end
@@ -14,7 +14,7 @@ get '/words/new' do
 end
 
 post '/word' do
-  new_word = Word.new(word: params[:word])
+  new_word = Word.new(word: params[:word], type: params[:type])
   new_word.add
   @word = new_word
   erb :word_success
@@ -32,11 +32,19 @@ end
 
 get '/words/:id/new' do
   @word = Word.find(params[:id].to_i)
-  binding.pry
   erb :def_form
 end
 
-get '/words/:id/mult' do
+post '/def' do
   @word = Word.find(params[:id].to_i)
-  erb :def_form
+  new_def = Def.new({def: params[:def]})
+  new_def.add
+  @word.add_definition(new_def)
+  erb :def_success
+end
+
+get '/clear' do
+  Word.clear
+  @words = Word.all
+  erb :words
 end

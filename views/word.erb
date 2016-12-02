@@ -1,11 +1,14 @@
-<h1><i class="fa fa-user"></i> <%= @word.word %></h1>
-<h3>definitions</h3>
+<h1><%= @word.word %></h1>
+<% if @word.definitions.length > 0 %>
   <% @word.definitions.each do |definition| %>
-  <h4><%= @word.word %></h4>
-  <small><p><%= definition.type %></p></small>
-  <p><%= definition.id %>. <%= definition.def %></p>
-  <% end %>
+  <ol>
+    <li><em><%= definition.type %></em>: <%= definition.def %></li>
+    <% end %>
+  </ol>
   <br>
-  <a href="/words/<%= @word.id %>/new"><i class="fa fa-plus"></i> Add definition</a>
-
+<% else %>
+  <h4>Looks like you have no definitions</h4>
+<% end %>
+<a href="/words/<%= @word.id %>/new"><i class="fa fa-plus"></i> Add definition</a>
+<br>
 <a href="/words"><button class="btn btn-default">View words</button></a>
