@@ -15,17 +15,11 @@ describe 'Definition' do
       expect(new_def.def).to eq('someone who does computer sorcery')
     end
   end
-#   describe '#add_def' do
-#     it 'will add a def to a def' do
-#       new_def = Def.new({def: 'coder'})
-#       expect(new_def.add_def('someone who does computer sorcery')).to eq(['someone who does computer sorcery'])
-#     end
-#   end
-#   describe '#defs' do
-#     it 'will read the defs of the def' do
-#       new_def = Def.new({def: 'coder'})
-#       new_def.add_def('someone who does computer sorcery')
-#       expect(new_def.defs).to eq(['someone who does computer sorcery'])
-#     end
-#   end
+  describe '.all' do
+    it 'will read the definitions in Def' do
+      new_def = Def.new({type: 'noun', def: 'someone who does computer sorcery'})
+      new_def.add
+      expect(new_def.all).to eq([new_def])
+    end
+  end
 end

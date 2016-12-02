@@ -14,4 +14,7 @@ class Word
   def definitions
     @definitions
   end
+  def self.all
+    @@words
+  end
 end
