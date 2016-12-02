@@ -21,4 +21,11 @@ describe 'Word' do
       expect(new_word.add_definition('someone who does computer sorcery')).to eq(['someone who does computer sorcery'])
     end
   end
+  describe '#definitions' do
+    it 'will read the definitions of the word' do
+      new_word = Word.new({word: 'coder'})
+      new_word.add_definition('someone who does computer sorcery')
+      expect(new_word.definitions).to eq(['someone who does computer sorcery'])
+    end
+  end
 end
