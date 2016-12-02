@@ -24,4 +24,9 @@ class Word
   def self.clear
     @@words = []
   end
+  def self.find(id)
+    found_word = nil
+    @@words.each {|word| word.id == id ? found_word = word : false}
+    found_word
+  end
 end

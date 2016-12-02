@@ -29,6 +29,7 @@ end
 
 describe('submit word path', {:type => :feature}) do
   it('displays add word form on link click') do
+    Word.clear
     visit('/words/new')
     fill_in('word', :with => 'coder')
     click_button('Submit')
@@ -42,5 +43,21 @@ describe('root to add word path', {:type => :feature}) do
     visit('/words')
     click_link('Add word')
     expect(page).to have_content('New word')
+  end
+end
+
+describe('words to word path', {:type => :feature}) do
+  it('displays add word form on link click') do
+    visit('/words')
+    click_link('coder')
+    expect(page).to have_content('Add definition')
+  end
+end
+
+describe('word to add definition path', {:type => :feature}) do
+  it('displays add word form on link click') do
+    visit('/words/1')
+    click_link('Add definition')
+    expect(page).to have_content('New definition')
   end
 end

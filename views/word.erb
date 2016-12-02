@@ -1,0 +1,11 @@
+<h1><i class="fa fa-user"></i> <%= @word.word %></h1>
+<h3>definitions</h3>
+  <% @word.definitions.each do |definition| %>
+  <h4><%= @word.word %></h4>
+  <small><p><%= definition.type %></p></small>
+  <p><%= definition.id %>. <%= definition.def %></p>
+  <% end %>
+  <br>
+  <a href="/words/<%= @word.id %>/new"><i class="fa fa-plus"></i> Add definition</a>
+
+<a href="/words"><button class="btn btn-default">View words</button></a>

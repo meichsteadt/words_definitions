@@ -25,20 +25,6 @@ describe 'Word' do
       expect(new_word.word).to eq('coder')
     end
   end
-  describe '.all' do
-    it 'will read the words in Word' do
-      new_word = Word.new({word: 'coder'})
-      new_word.add
-      expect(Word.all).to eq([new_word])
-    end
-  end
-  describe '.clear' do
-    it 'will clear the words in Word' do
-      new_word = Word.new({word: 'coder'})
-      new_word.add
-      expect(Word.clear).to eq([])
-    end
-  end
   describe '#add_definition' do
     it 'will add a definition to a word' do
       new_word = Word.new({word: 'coder'})
@@ -57,6 +43,27 @@ describe 'Word' do
     it 'will read the id of the word' do
       new_word = Word.new({word: 'coder'})
       expect(new_word.id).to eq(1)
+    end
+  end
+  describe '.all' do
+    it 'will read the words in Word' do
+      new_word = Word.new({word: 'coder'})
+      new_word.add
+      expect(Word.all).to eq([new_word])
+    end
+  end
+  describe '.clear' do
+    it 'will clear the words in Word' do
+      new_word = Word.new({word: 'coder'})
+      new_word.add
+      expect(Word.clear).to eq([])
+    end
+  end
+  describe '.find' do
+    it 'will clear the find in Word based off of id' do
+      new_word = Word.new({word: 'coder'})
+      new_word.add
+      expect(Word.find(1)).to eq(new_word)
     end
   end
 end
