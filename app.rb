@@ -17,7 +17,8 @@ post '/word' do
   new_word = Word.new(word: params[:word], type: params[:type])
   new_word.add
   @word = new_word
-  erb :word_success
+  @words = Word.all
+  erb :words
 end
 
 get '/clear' do
@@ -46,7 +47,7 @@ post '/def' do
   new_def = Def.new({def: params[:def]})
   new_def.add
   @word.add_definition(new_def)
-  erb :def_success
+  erb :word
 end
 
 get '/a_z' do

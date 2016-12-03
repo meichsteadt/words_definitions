@@ -18,23 +18,12 @@ describe('/words/new', {:type => :feature}) do
   end
 end
 
-describe('post /word', {:type => :feature}) do
-  it('displays add word form on link click') do
-    visit('/words/new')
-    fill_in('word', :with => 'coder')
-    select('noun', :from => 'type')
-    click_button('Submit')
-    expect(page).to have_content('You have successfully added a word')
-  end
-end
-
 describe('/clear', {:type => :feature}) do
   it('displays add word form on link click') do
     visit('/words/new')
     fill_in('word', :with => 'coder')
     select('noun', :from => 'type')
     click_button('Submit')
-    click_link('View words')
     click_link('Delete all words')
     expect(page).to have_content('Delete all words')
   end
@@ -46,7 +35,6 @@ describe('/words', {:type => :feature}) do
     fill_in('word', :with => 'coder')
     select('noun', :from => 'type')
     click_button('Submit')
-    click_link('View words')
     expect(page).to have_content('coder')
   end
 end
@@ -71,16 +59,9 @@ describe('words/:id/new', {:type => :feature}) do
   it('displays add word form on link click') do
     visit('/words/1')
     click_link('Add definition')
-    expect(page).to have_content('New definition')
-  end
-end
-
-describe('post /def', {:type => :feature}) do
-  it('adds a definition to a word') do
-    visit('/words/1/new')
-    fill_in('definition', :with => 'magical computer sorcerer')
+    fill_in('def', :with => 'magical computer sorcerer')
     click_button('Submit')
-    expect(page).to have_content('You have successfully added a definition')
+    expect(page).to have_content('magical computer sorcerer')
   end
 end
 
@@ -90,7 +71,6 @@ describe('/a_z', {:type => :feature}) do
     fill_in('word', :with => 'bro')
     select('noun', :from => 'type')
     click_button('Submit')
-    click_link('View words')
     click_link('Sort a-z')
     expect(page).to have_content('bro coder')
   end
@@ -102,7 +82,6 @@ describe('/a_z', {:type => :feature}) do
     fill_in('word', :with => 'dro')
     select('noun', :from => 'type')
     click_button('Submit')
-    click_link('View words')
     click_link('Sort z-a')
     expect(page).to have_content('dro coder')
   end
