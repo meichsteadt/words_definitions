@@ -3,7 +3,7 @@
   <div class="col-md-11 col-md-offset-1">
     <ul>
       <% @words.each() do |word| %>
-        <li style="font-size:20px;"><a href="/words/<%= word.id %>"><%= word.word %></a></li>
+        <li><a href="/words/<%= word.id %>"><%= word.word %></a></li>
         <p><em><%= word.type %></em></p>
         <ol class="defs">
           <% word.definitions.each do |definition| %>

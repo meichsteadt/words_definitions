@@ -5,7 +5,7 @@
       <p><em><%= @word.type %></em></p>
       <ol class="defs">
         <% @word.definitions.each do |definition| %>
-          <li style="list-style-position:inside;"><%= definition.def %></li>
+          <li><%= definition.def %></li>
         <% end %>
       </ol>
     <% else %>
